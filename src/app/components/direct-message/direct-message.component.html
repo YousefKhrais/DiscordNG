@@ -1,0 +1,20 @@
+<div class="flex h-screen w-screen">
+    <app-servers-list></app-servers-list>
+
+    <div class="flex w-full h-full">
+        <div class="flex flex-col justify-between h-full bg-discord-primarylight">
+            <app-direct-messages-list class="h-full w-60"></app-direct-messages-list>
+            <app-user-control-panel class="w-60"></app-user-control-panel>
+        </div>
+
+        <div class="flex flex-col w-full h-full">
+            <app-direct-message-topbar class="w-full"></app-direct-message-topbar>
+
+            <div class="flex w-full h-full bg-discord-primarylight overflow-hidden">
+                <app-chat-content class="w-full h-full"></app-chat-content>
+
+                <app-profile-panel class="w-[27%] min-w-[21.25rem] h-full"></app-profile-panel>
+            </div>
+        </div>
+    </div>
+</div>

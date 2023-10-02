@@ -1,0 +1,15 @@
+<div class="flex flex-col justify-end h-full w-full">
+    <div class="flex flex-col justify-end h-full w-full overflow-hidden">
+        <div class="h-full w-full overflow-y-scroll overflow-x-hidden" #chat>
+            <app-chat-beginning-banner></app-chat-beginning-banner>
+
+            <div class="mt-6 mb-5">
+                <app-chat-message *ngFor="let message of messages | reverse" [message]="message"></app-chat-message>
+            </div>
+        </div>
+    </div>
+
+    <div class="h-[4.25rem] min-h-[4.25rem] w-full px-4 pb-6">
+        <div class="h-full w-full bg-[#383A40] rounded-lg"></div>
+    </div>
+</div>

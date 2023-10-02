@@ -1,0 +1,5 @@
+<div *ngFor="let item of parsedSpans">
+    <span class="" [ngClass]="getMessageStyle(item.type)" (click)="onMessageClicked(item)">
+        {{item.text}}
+    </span>
+</div>

@@ -1,0 +1,90 @@
+<div class="flex flex-col w-full h-max mb-4">
+    <div
+        class="date-divider flex border-t-[1px] border-t-[#3F4147] border-thin z-[1] h-0 items-center justify-center relative mx-4">
+        <span class="block px-0.5 py-0.5 text-[#949BA4] text-xs font-semibold mt-[-1px] bg-[#313338]">
+            September 19,2023
+        </span>
+    </div>
+
+    <div class="message flex w-full px-4 py-1 mt-4 hover:bg-[#2E3035]">
+        <div class="message-contents flex gap-4 items-start w-full">
+            <img class="avatar rounded-full w-10 h-10"
+                [src]="'https://cdn.discordapp.com/avatars/'+ message.author.id +'/'+ message.author.avatar +'.webp?size=80'">
+
+            <div class="w-full flex flex-col">
+                <h3 class="flex gap-2 text-center items-center">
+                    <span class="headerText">
+                        <span class="text-[#F2F3F5] font-medium">
+                            {{message.author.username}}
+                        </span>
+                    </span>
+
+                    <!-- 09/20/2023 6:52 PM -->
+                    <span class="text-[#949B9A] text-xs font-medium">
+                        {{message.timestamp | date: 'M/d/yy, h:mm a'}}
+                    </span>
+                </h3>
+
+                <div class="messageContent flex flex-col gap-0.5 text-[#DBDEE1]">
+                    <div class="whitespace-pre-wrap">
+                        <app-parsed-message [message]="message.content"></app-parsed-message>
+                    </div>
+
+                    <div *ngIf="message.embeds.length != 0">
+                        <div *ngIf="message.embeds[0].type =='image'">
+                            <img [src]="message.embeds[0].thumbnail.url" [width]="message.embeds[0].thumbnail.width/2"
+                                [height]="message.embeds[0].thumbnail.height/2">
+                        </div>
+
+                        <div *ngIf="message.embeds[0].type =='article'">
+                            <article class="bg-[#2B2D31] max-w-[27rem] border-l-4 border-[#1E1F22] rounded">
+                                <div class="flex flex-col gap-2 pb-4 pt-4 pr-4 pl-3">
+                                    <!-- Embed Link (Title) -->
+                                    <a class="text-[#00A8FC] font-medium hover:underline" [href]="message.embeds[0].url"
+                                        target="_blank">
+                                        {{message.embeds[0].title}}
+                                    </a>
+
+                                    <!-- Embed Description -->
+                                    <div class="text-sm text-[#D6D9DC] break-words">
+                                        {{message.embeds[0].description}}
+                                    </div>
+
+                                    <!-- Embed Image -->
+                                    <div class="mt-2">
+                                        <img [src]="message.embeds[0].thumbnail.url"
+                                            class="rounded block w-full max-w-[400px] max-h-[225px]">
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div *ngIf="message.embeds[0].type =='video'">
+                            <article class="bg-[#2B2D31] max-w-[27rem] border-l-4 rounded"
+                                [ngClass]="getBorderColor(message.embeds[0].color)">
+                                <div class="flex flex-col gap-2 pb-4 pt-4 pr-4 pl-3">
+                                    <!-- Embed Link (Title) -->
+                                    <a class="text-[#00A8FC] font-medium hover:underline" [href]="message.embeds[0].url"
+                                        target="_blank">
+                                        {{message.embeds[0].title}}
+                                    </a>
+
+                                    <!-- Embed Description -->
+                                    <div class="text-sm text-[#D6D9DC] break-words">
+                                        {{message.embeds[0].description}}
+                                    </div>
+
+                                    <!-- Embed Image -->
+                                    <div class="mt-2">
+                                        <img [src]="message.embeds[0].thumbnail.url"
+                                            class="rounded block w-full max-w-[400px] max-h-[225px]">
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1155128536860991518",
+        "type": 0,
+        "content": "TEST",
+        "channel_id": "821136867847962664",
+        "author": {
+            "id": "718541037559349268",
+            "username": "peanuterbutter",
+            "avatar": "5dab4cfce616cc3fc5ab98038537af61",
+            "discriminator": "0",
+            "public_flags": 128,
+            "flags": 128,
+            "banner": null,
+            "accent_color": null,
+            "global_name": "Peanut Butter",
+            "avatar_decoration_data": null,
+            "banner_color": null
+        },
+        "attachments": [],
+        "embeds": [],
+        "mentions": [],
+        "mention_roles": [],
+        "pinned": false,
+        "mention_everyone": false,
+        "tts": false,
+        "timestamp": "2023-09-23T13:08:24.438000+00:00",
+        "edited_timestamp": null,
+        "flags": 0,
+        "components": []
+    }
+]
